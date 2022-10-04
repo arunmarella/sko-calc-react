@@ -1,0 +1,222 @@
+@use postcss-nested;
+
+:root {
+  /* color palette :: https://coolors.co/app/d63c6b-5cc8ff-efefef-292f36-d6d6d6 */
+  --white: #efefef;
+  --white-alpha: rgba(239, 239, 239, 0.64);
+  --grey: #d6d6d6;
+  --gray: var(--grey);
+  --black: #292f36;
+  --pure-black: #131313;
+  --pure-black-alpha: rgba(19, 19, 19, 0.64);
+  --pure-black-alpha-light: rgba(19, 19, 19, 0.24);
+  --pure-black-alpha-transparent: rgba(19, 19, 19, 0.12);
+
+  --primary: #d63c6b;
+  --primary-dk: #c41c4f;
+  --accent: #5cc8ff;
+  --accent-dk: #00a3f5;
+
+  --transition: 300ms;
+  --easing: cubic-bezier(1, 1, 1, 1);
+  --easing-bounce-in: cubic-bezier(0, 0, 0.43, 1.3);
+  --easing-bounce-out: cubic-bezier(0.43, 1.3, 0, 0);
+  font-size: 100%;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding-top: 20px;
+  user-select: none;
+}
+
+button {
+  outline: none;
+  border: 0;
+  padding: 1rem;
+  background-color: var(--black);
+
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--accent);
+
+  transition: all var(--transition) var(--easing);
+
+  &:hover {
+    color: var(--accent-dk);
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
+  &.long-text {
+    font-size: 1rem;
+  }
+}
+
+.sk-calculator {
+  position: relative;
+  margin: 0 auto;
+  width: 320px;
+
+  box-shadow: 0 19px 38px var(--pure-black-alpha-light),
+    0 15px 12px var(--pure-black-alpha-transparent);
+}
+
+body,
+.editable-field,
+.memory-bank {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar:horizontal {
+    background-color: var(--pure-black);
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar:horizontal {
+    background-color: var(--primary);
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar:horizontal {
+      background-color: var(--primary-dk);
+    }
+  }
+}
+
+.editable-field {
+  position: relative;
+  width: 320px;
+  height: 80px;
+  z-index: 10;
+
+  outline: none;
+  box-shadow: 0 4px 2px -2px var(--pure-black-alpha);
+  padding: 0.5rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  background-color: var(--pure-black-alpha);
+
+  font-size: 2rem;
+  line-height: 2;
+  color: var(--primary);
+  text-align: right;
+  direction: rtl;
+  white-space: nowrap;
+}
+
+.memory-bank {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+
+  background-color: var(--pure-black-alpha);
+  color: var(--accent-dk);
+
+  transition: height 150ms var(--easing), overflow 1ms var(--easing) 200ms,
+    padding 1ms var(--easing) 200ms;
+
+  .toggle-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+
+    .title {
+      display: inline-block;
+      transform: rotate(45deg);
+    }
+  }
+
+  &.visible {
+    height: calc(100% - 80px);
+    padding: 10px;
+    overflow-y: auto;
+
+    transition: height 200ms var(--easing), padding 1ms var(--easing);
+  }
+}
+
+.button-set {
+  &--functions,
+  &--equations {
+    background-color: var(--black);
+
+    button {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+
+      vertical-align: top;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      color: var(--primary);
+
+      &:hover {
+        color: var(--primary-dk);
+      }
+    }
+  }
+
+  &--numbers {
+    width: 240px;
+    float: left;
+    background-color: var(--black);
+    button {
+      display: block;
+      position: relative;
+
+      width: 80px;
+      height: 80px;
+      float: left;
+
+      background-color: var(--black);
+
+      transition: box-shadow var(--transition) var(--easing);
+
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+
+  &--functions {
+    clear: left;
+    float: left;
+    width: 240px;
+  }
+}
