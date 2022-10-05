@@ -193,6 +193,7 @@ body,
   }
 
   &--numbers {
+    color: red;
     width: 240px;
     float: left;
     background-color: var(--black);

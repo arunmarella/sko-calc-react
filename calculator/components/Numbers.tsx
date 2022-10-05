@@ -14,7 +14,7 @@ export default class Numbers extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="button-set--numbers">
         <Button text="1" clickHandler={this._number} />
         <Button text="2" clickHandler={this._number} />
         <Button text="3" clickHandler={this._number} />

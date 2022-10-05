@@ -5,7 +5,6 @@
   "dependencies": {
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.2",
-    "EventEmitter": "^1.0.0",
     "caniuse-lite": "^1.0.30000697",
     "postcss": "^8.4.17",
     "postcss-cssnext": "^3.1.1",
