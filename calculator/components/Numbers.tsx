@@ -1,21 +1,30 @@
 import * as React from 'react';
 import '../../style.css';
 import Button from './Button';
+import { memory } from '../services/memory.service';
 
 export default class Numbers extends React.Component {
+  _number = (num) => {
+    if (!memory.curInput) {
+      console.log('c');
+      return (memory.newInput = num);
+    }
+    console.log('c2');
+    return (memory.newInput = `${memory.curInput}${num}`);
+  };
   render() {
     return (
       <div>
-        <Button text="1" />
-        <Button text="2" />
-        <Button text="3" />
-        <Button text="4" />
-        <Button text="5" />
-        <Button text="6" />
-        <Button text="7" />
-        <Button text="8" />
-        <Button text="9" />
-        <Button text="0" />
+        <Button text="1" clickHandler={this._number} />
+        <Button text="2" clickHandler={this._number} />
+        <Button text="3" clickHandler={this._number} />
+        <Button text="4" clickHandler={this._number} />
+        <Button text="5" clickHandler={this._number} />
+        <Button text="6" clickHandler={this._number} />
+        <Button text="7" clickHandler={this._number} />
+        <Button text="8" clickHandler={this._number} />
+        <Button text="9" clickHandler={this._number} />
+        <Button text="0" clickHandler={this._number} />
       </div>
     );
   }

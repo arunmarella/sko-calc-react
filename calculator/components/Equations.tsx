@@ -5,6 +5,11 @@ import Button from './Button';
 import {memory} from '../services/memory.service';
 export class Equations extends React.Component {
   _eq(type) {
+    let str = memory.curInput.toString();
+    str = str.trim();
+    if(str[str.length-1] === type){
+      return;
+    }
     memory.newInput = `${memory.curInput} ${type} `;
   };
   

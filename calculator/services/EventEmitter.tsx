@@ -6,6 +6,7 @@ export enum Events {
 export const eventEmitter = {
   _events: {},
   dispatch(event: Events, data: any) {
+    debugger
     if (!this._events[event]) return;
     this._events[event].forEach((callback) => callback(data));
   },

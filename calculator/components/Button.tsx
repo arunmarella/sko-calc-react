@@ -10,15 +10,15 @@ export default class Button extends React.Component<ButtonProps> {
   constructor(props) {
     super(props);
   }
-  _handleClick() {
-    console.log(this?.props);
+  _handleClick = () => {
+    console.log('hc', this?.props);
     let text = this?.props.text,
       cb = this?.props.clickHandler;
 
     if (cb) {
       cb.call(null, text);
     }
-  }
+  };
 
   render() {
     return (
