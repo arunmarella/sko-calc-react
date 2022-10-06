@@ -1,28 +1,53 @@
 {
-  "name": "react-ts",
-  "version": "0.0.0",
+  "name": "sko-calc",
+  "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@types/react": "^18.0.8",
-    "@types/react-dom": "^18.0.2",
-    "caniuse-lite": "^1.0.30000697",
-    "postcss": "^8.4.17",
-    "postcss-cssnext": "^3.1.1",
-    "postcss-custom-properties": "^12.1.9",
-    "postcss-nested": "^5.0.6",
-    "postcss-preset-env": "^7.8.2",
-    "postcss-simple-vars": "^7.0.0",
-    "postcss-url-resolver": "^0.0.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.64",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "postcss:watch": "postcss src/style.css --use postcss-import postcss-mixins postcss-nested postcss-preset-env --dir src/css --watch",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "react-scripts": "latest"
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-mixins": "^9.0.1",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.2.0"
   }
 }

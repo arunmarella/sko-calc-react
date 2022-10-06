@@ -1,0 +1,8 @@
+body{
+    color: red;
+    font-size: xx-large;
+    &:hover{
+    color:blue
+     }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2NvbXAxLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixtQkFBbUI7SUFDbkI7SUFDQTtLQUNDO0FBQ0wiLCJmaWxlIjoicHJlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbImJvZHl7XHJcbiAgICBjb2xvcjogcmVkO1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgICY6aG92ZXJ7XHJcbiAgICBjb2xvcjpibHVlXHJcbiAgICAgfVxyXG59Il19 */

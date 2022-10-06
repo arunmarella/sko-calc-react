@@ -1,0 +1,7 @@
+body{
+    color: red;
+    font-size: xx-large;
+    &:hover{
+    color:blue
+     }
+}
