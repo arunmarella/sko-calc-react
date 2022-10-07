@@ -14,11 +14,11 @@ export default class Editor extends React.Component<EditorProps, EditorState> {
     this.state = { text: props.text || '0' };
   }
   _updateField = (newStr) => {
-    newStr = newStr.split ? newStr.split(' ').reverse().join(' ') : newStr;
+    //newStr = newStr.split ? newStr.split(' ').reverse().join(' ') : newStr;
     return this.setState({ text: newStr });
   };
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     eventEmitter.subscribe(Events.NUMBER_CRUNCHER, this._updateField);
   };
 

@@ -22,7 +22,6 @@ export default class Functions extends React.Component{
   render() {
     return (
       <section className="button-set--functions">
-        <Button klass="long-text" text="recall" clickHandler={this._showMemoryBank} />
         <Button klass="long-text" text="clear" clickHandler={this._clear} />
         <Button text="&larr;" clickHandler={this._contentClear} />
       </section>

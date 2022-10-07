@@ -6,10 +6,8 @@ import { memory } from '../services/memory.service';
 export default class Numbers extends React.Component {
   _number = (num) => {
     if (!memory.curInput) {
-      console.log('c');
       return (memory.newInput = num);
     }
-    console.log('c2');
     return (memory.newInput = `${memory.curInput}${num}`);
   };
   render() {

@@ -15,12 +15,10 @@ export class Presets extends React.Component {
     }
     const preset = this.getPreset(str);
     if (preset && preset !== type) {
-      console.log(str);
       str = str.replace(preset, '');
       let result = eval(str);
       const fromFactor = this.PRESETS[preset];
       const toFactor = this.PRESETS[type];
-      console.log(str, toFactor, fromFactor);
       if (toFactor < fromFactor) {
         result = result / Math.pow(10, fromFactor);
       } else {
@@ -34,7 +32,7 @@ export class Presets extends React.Component {
 
   render() {
     return (
-      <section className="button-set--functions">
+      <section className="button-set--presets">
         <Button klass="long-text" text="ETH" clickHandler={this._applyPreset} />
         <Button klass="long-text" text="WEI" clickHandler={this._applyPreset} />
         <Button

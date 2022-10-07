@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postcss:watch": "postcss src/style.css --use postcss-import postcss-mixins postcss-nested postcss-preset-env --dir src/css --watch",
+    "postcss:watch": "postcss src/style.css --use postcss-nested --dir src/css --watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

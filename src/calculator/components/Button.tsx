@@ -11,7 +11,6 @@ export default class Button extends React.Component<ButtonProps> {
     super(props);
   }
   _handleClick = () => {
-    console.log('hc', this?.props);
     let text = this?.props.text,
       cb = this?.props.clickHandler;
 
