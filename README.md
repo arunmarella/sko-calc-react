@@ -1,10 +1,11 @@
 # DeFi Calculator
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+For CSS, the project uses PostCSS as pre-processor. 
 ## Start Calculator
-In the project directory, run:
-
+In the project directory, run
+### `npm run postcss:watch`
+Open another terminal, run
 ### `npm start`
 
 Runs the app in the development mode.\
