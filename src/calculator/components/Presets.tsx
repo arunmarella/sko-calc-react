@@ -3,17 +3,15 @@ import '../../css/style.css';
 import Button from './Button';
 import { memory } from '../services/memory.service';
 export class Presets extends React.Component {
-  PRESETS = { ETH: 0, WEI: 9, G: 18 };
+  PRESETS = { ETH: 0, WEI: 9, GWEI: 18 };
   getPreset = (input) => {
-    return Object.keys(this.PRESETS).find((key) => input.indexOf(key) > -1);
+    console.log(input);
+    return Object.keys(this.PRESETS).find((key) => input.split(" ")[1] === key);
   };
   _applyPreset = (type) => {
     let str = memory.curInput.toString();
     str = str.trim();
-    if (str.indexOf(type) > 0) {
-      return;
-    }
-    const preset = this.getPreset(str);
+    const preset = this.getPreset(memory.curInput.toString().trim());
     if (preset && preset !== type) {
       str = str.replace(preset, '');
       let result = eval(str);
@@ -37,7 +35,7 @@ export class Presets extends React.Component {
         <Button klass="long-text" text="WEI" clickHandler={this._applyPreset} />
         <Button
           klass="long-text"
-          text="G"
+          text="GWEI"
           clickHandler={this._applyPreset}
         />
       </section>

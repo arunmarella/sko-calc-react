@@ -3,8 +3,6 @@ import '../../css/style.css';
 export interface ContentProps {
   text: string;
   clickHandler: Function;
-  initEdit: boolean;
-  spellCheck: boolean;
 }
 export class Content extends React.Component<ContentProps> {
   _handleClick=()=> {

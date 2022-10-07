@@ -11,18 +11,10 @@ export default class Numbers extends React.Component {
     return (memory.newInput = `${memory.curInput}${num}`);
   };
   render() {
+      const buttons = "1234567890".split("").map(number => <Button text={number} clickHandler={this._number} key={number}/>);
     return (
       <div className="button-set--numbers">
-        <Button text="1" clickHandler={this._number} />
-        <Button text="2" clickHandler={this._number} />
-        <Button text="3" clickHandler={this._number} />
-        <Button text="4" clickHandler={this._number} />
-        <Button text="5" clickHandler={this._number} />
-        <Button text="6" clickHandler={this._number} />
-        <Button text="7" clickHandler={this._number} />
-        <Button text="8" clickHandler={this._number} />
-        <Button text="9" clickHandler={this._number} />
-        <Button text="0" clickHandler={this._number} />
+        {buttons}
       </div>
     );
   }

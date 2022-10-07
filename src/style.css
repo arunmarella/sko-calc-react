@@ -93,7 +93,7 @@ button {
 
     &--presets,
     &--functions,
-    &--equations {
+    &--operators {
         background-color: var(--black);
         button {
             display: inline-block;

@@ -3,8 +3,8 @@ import '../../css/style.css';
 import Button from './Button';
 
 import {memory} from '../services/memory.service';
-export class Equations extends React.Component {
-  _eq(type) {
+export class Operators extends React.Component {
+  _operator(type) {
     let str = memory.curInput.toString();
     str = str.trim();
     if(str[str.length-1] === type){
@@ -18,12 +18,12 @@ export class Equations extends React.Component {
   };
   
   render() {
+      const operators = "+-*/".split("").map(operator =>{
+          return <Button text={operator} key={operator} clickHandler={this._operator} />;
+      });
     return (
-      <section className="button-set--equations">
-        <Button text="+" clickHandler={this._eq} />
-        <Button text="-" clickHandler={this._eq} />
-        <Button text="*" clickHandler={this._eq} />
-        <Button text="/" clickHandler={this._eq} />
+      <section className="button-set--operators">
+          {operators}
         <Button text="=" clickHandler={this._equate} />
       </section>
     )  
